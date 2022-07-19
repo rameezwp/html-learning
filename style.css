@@ -1,0 +1,78 @@
+.topbar {
+	color: #FFF;
+	padding: 20px;
+	display: flex;
+}
+.bi {
+	color: red;
+}
+ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+ul li {
+	display: inline;
+}
+
+.with-border li {
+	border-right:  1px solid #FFF;
+	margin-right: 20px;
+	padding-right: 20px;
+}
+ul li:last-child {
+	border: none;
+}
+.round-icon {
+	background-color: red;
+	color: white;
+	padding: 20px;
+	border-radius: 50%;
+	margin-top: 20px;
+}
+.left-area {
+	width: 60%;
+}
+
+.right-area {
+	display: flex;
+	width: 40%;
+	justify-content: flex-end;
+}
+
+.right-area i,
+.right-area a {
+	color: white;
+}
+
+.right-area li {
+	margin-left: 10px;
+}
+
+.right-area a {
+	margin-left: 20px;
+	border-left: 1px dotted #c2c2c2;
+	padding-left: 20px;
+}
+
+.wrapper {
+	max-width: 1170px;
+	margin: 0 auto;
+}
+
+body {
+	/*background-color: #2D2D2D;*/
+}
+
+h2 span {
+	margin-right: 100px;
+}
+
+.box {
+	padding: 100px;
+}
+
+.box div {
+	margin-left: 100px;
+
+}
