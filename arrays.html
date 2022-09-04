@@ -7,13 +7,21 @@
 <body>
 
 <script>
-	var arr = ["John", "Adam" ,"Doe", 132, true, "Danish", "Atta"];
+	var arr = [];
 
-	arr.push("Another Name");
-	
-	for(var i = 0; i < arr.length; i++){
-		console.log(arr[i]);
+	var total = prompt("How many entries?");
+
+	for (var i = 0; i < total; i++) {
+		input = prompt("Provide Entry "+ (i+1));
+		arr.push(input);
 	}
+
+	for (var i = 0; i < arr.length; i++) {
+		var value = arr[i];
+		arr[i] = Number(value) + 10;
+	}
+
+	console.log(arr);
 </script>	
 </body>
 </html>
