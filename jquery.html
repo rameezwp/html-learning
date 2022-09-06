@@ -3,16 +3,36 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>jQuery</title>
+	<style>
+		h1 {
+			cursor: move;
+		}
+	</style>
 </head>
 <body>
 
 	<h1>Heading 1</h1>
+	<h2>Score: <span></span></h2>
 
 
 <script src="js/jquery-3.6.1.min.js"></script>
 <script>
-	$('h1').css('color','red');
-	$('h1').text('Heading 2');
+
+
+
+
+	function getRandomInt(max) {
+	  return Math.floor(Math.random() * max);
+	}
+
+	var score = 0;
+
+	$('h1').on('click', function(){
+		score += 1;
+		$('h2 span').text(score);
+	});
+
+	console.log();
 </script>	
 
 </body>
