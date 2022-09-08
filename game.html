@@ -1,0 +1,80 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Game</title>
+	<style>
+		.wrapper {
+			background-color: #f2f2f2;
+			width: 700px;
+			height: 500px;
+			margin: 0 auto;
+			position: relative;
+			overflow: hidden;
+		}
+		.box {
+			width: 50px;
+			height: 50px;
+			background-color: black;
+			position: absolute;
+			top: 500;
+			left: 50;
+			transition: all 10s;
+			cursor: pointer;
+		}
+		.panel {
+			text-align: center;
+			background-color: black;
+			color: #FFF;
+			max-width: 700px;
+			margin: 20px auto;
+			font-size: 18px; 
+		}
+	</style>
+</head>
+<body>
+
+	<div class="wrapper">
+		<div class="box transition"></div>
+	</div>
+	<div class="panel">
+		Score: <span class="score">0</span>
+		Life: <span class="life">3</span>
+	</div>
+
+	<script src="js/jquery-3.6.1.min.js"></script>	
+	<script>
+		jQuery(document).ready(function($) {
+			var score = 0;
+			var life = 3;
+
+			$('.box').css('top', '0');
+
+			$('.wrapper').on('click', function(event) {
+				event.preventDefault();
+				if (life == 0) {
+					alert('Game Over');
+				} else {
+					life--;
+				}
+				$('.life').text(life);
+			});
+
+			$('.wrapper').on('click', '.box', function(event) {
+				event.stopImmediatePropagation();
+				score += 10;
+
+				$(this).remove();
+
+				$('.score').text(score);
+
+				var left = Math.floor(Math.random() * 650);
+
+				$('.wrapper').html('<div class="box" style="left:'+ left +'"></div>');
+				$('.box').animate({top: 0}, 1000);
+				
+			});
+		});
+	</script>
+</body>
+</html>
