@@ -11,28 +11,47 @@
 </head>
 <body>
 
+	<div class="input-wrap">
+		<div class="single-input">
+			<input type="text" placeholder="Sport"> <button class="plus">+</button> <button class="minus">-</button>
+		</div>
+	</div>
+
 	<h1>Heading 1</h1>
-	<h2>Score: <span></span></h2>
+	<p>Lorem ipsum dolor sit, amet, consectetur adipisicing elit. Fuga, earum, sint! Porro fugit animi ut, nobis eligendi vero eos inventore atque tempora rem nihil temporibus repudiandae commodi fugiat dolorem pariatur?</p>
+
+	<h1>Heading 2</h1>
+	<p>Lorem ipsum dolor sit, amet, consectetur adipisicing elit. Fuga, earum, sint! Porro fugit animi ut, nobis eligendi vero eos inventore atque tempora rem nihil temporibus repudiandae commodi fugiat dolorem pariatur?</p>
+
+	<h1>Heading 3</h1>
+	<p>Lorem ipsum dolor sit, amet, consectetur adipisicing elit. Fuga, earum, sint! Porro fugit animi ut, nobis eligendi vero eos inventore atque tempora rem nihil temporibus repudiandae commodi fugiat dolorem pariatur?</p>
 
 
 <script src="js/jquery-3.6.1.min.js"></script>
 <script>
+jQuery(document).ready(function($) {
+	$('p').hide();
 
-
-
-
-	function getRandomInt(max) {
-	  return Math.floor(Math.random() * max);
-	}
-
-	var score = 0;
-
-	$('h1').on('click', function(){
-		score += 1;
-		$('h2 span').text(score);
+	$('body').on('click', 'h1', function(event) {
+		$(this).next().slideToggle();
 	});
 
-	console.log();
+	$('.input-wrap').on('click', '.plus', function(event) {
+		event.preventDefault();
+		$('.input-wrap .single-input:first-child').clone().appendTo('.input-wrap');
+	});
+
+	$('.input-wrap').on('click', '.minus', function(event) {
+		event.preventDefault();
+		var numberOfElements = $(this).closest('.input-wrap').find('.single-input').length;
+		if (numberOfElements == 1) {
+			alert('You can not Delete!');
+		} else {
+			$(this).closest('.single-input').remove();
+		}
+	});
+
+});
 </script>	
 
 </body>
