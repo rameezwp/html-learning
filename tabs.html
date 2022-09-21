@@ -1,0 +1,59 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>jQuery Tabs</title>
+</head>
+<style>
+	nav a {
+		text-decoration: none;
+		color: white;
+		background-color: #000;
+		padding: 10px 20px;
+	}
+	nav a:hover {
+		background-color: grey;
+	}
+	.content div {
+		display: none;
+	}
+</style>
+<body>
+
+	<nav>
+		<a href="#link-1">Link 1</a>
+		<a href="#link-2">Link 2</a>
+		<a href="#link-3">Link 3</a>
+	</nav>
+
+	<div class="content">
+		<div id="link-1">
+			<h1>Link 1</h1>
+			<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo, perspiciatis eaque numquam iusto illo ab ipsa repellat pariatur officia eligendi nostrum, voluptates. Praesentium, ipsam. Id obcaecati officiis enim voluptatum corrupti!</p>
+		</div>
+		<div id="link-2">
+			<h1>Link 2</h1>
+			<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea officiis alias explicabo ipsa eum excepturi cumque vel deleniti. Sed eos velit debitis quia, architecto molestias maxime reiciendis, dolorum alias totam.</p>
+		</div>
+		<div id="link-3">
+			<h1>Link 3</h1>
+			<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam ipsam possimus dicta sint incidunt vero consequatur, non pariatur, consequuntur, aliquid soluta deleniti provident officiis. Nostrum aliquam, repellat dignissimos cum optio.</p>
+		</div>
+	</div>
+
+
+<script src="js/jquery-3.6.1.min.js"></script>
+<script>
+jQuery(document).ready(function($) {
+	
+	$('nav').on('click', 'a', function(event) {
+		event.preventDefault();
+		var id = $(this).attr('href');
+		$('.content').find(id).show().siblings().hide();
+	});	
+
+});
+</script>	
+
+</body>
+</html>
